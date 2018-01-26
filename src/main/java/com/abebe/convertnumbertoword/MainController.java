@@ -22,29 +22,42 @@ public class MainController {
         String var2="";
         String var3="";
         String var4="";
+        String var5="";
         String hun = "hundred";
-        int input2,input3;
-
+        String thou = "Thousand";
+        int input2,input3,input4,input5;
         int kk = input%10;
         input = input/10;
+        //input4 = input/10;
         var = unitsArray[kk];
-
         var3 = var2 +"  "+var;
         if(kk==0){
             var3 = var2;
         }
-        else if(input<10){
+        else if(input<10 ){
             var2 = tensArray[input];
             var3 = var2 +" "+var;
         }
         else if(input >10) {
-            input3= input;
+            input3 = input;
             input = input % 10;
-            input2 = input3/10;
-            var2 = tensArray[input];
-            var4 = unitsArray[input2];
-            var3 = var4 +" "+ hun + " "+var2+" "+var;
+            input2 = input3 / 10;
+            if (input2 > 10) {
+                input4 = input2 % 10;
+                input2 = input2 / 10;
+                // input5=input4%10;
+                var2 = unitsArray[input4];
+                var4 = unitsArray[input2];
+                var5 = tensArray[input];
+                var3 = var4 + " " + thou + " " + var2 + " " + hun + " " + var5 + " " + var;
+            } else {
+                var2 = tensArray[input];
+                var4 = unitsArray[input2];
+                var3 = var4 + " " + hun + " " + var2 + " " + var;
+            }
+
         }
+
         return var3;
     }
 }
