@@ -28,10 +28,10 @@ public class MainController {
         int input2,input3,input4,input5;
         if(input<20 ){ var3 = unitsArray[input];  }
          else{
-
         int kk = input%10;
+
         input = input/10;
-        //input4 = input/10;
+        input5 = input%10;
         var = unitsArray[kk];
         var3 = var2 +"  "+var;
         if(kk==0){
@@ -48,14 +48,18 @@ public class MainController {
             if (input2 > 10) {
                 input4 = input2 % 10;
                 input2 = input2 / 10;
-                // input5=input4%10;
                 var2 = unitsArray[input4];
                 var4 = unitsArray[input2];
                 var5 = tensArray[input];
                 var3 = var4 + " " + thou + " " + var2 + " " + hun + " " + var5 + " " + var;
             } else {
+
                 var2 = tensArray[input];
                 var4 = unitsArray[input2];
+                if(input5 ==1){
+                    kk+=10;
+                    var3 = var4 + " " + hun + " " + unitsArray[kk];
+                }else
                 var3 = var4 + " " + hun + " " + var2 + " " + var;
             }
         }}
