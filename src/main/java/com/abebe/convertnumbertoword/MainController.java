@@ -26,6 +26,9 @@ public class MainController {
         String hun = "hundred";
         String thou = "Thousand";
         int input2,input3,input4,input5;
+        if(input<20 ){ var3 = unitsArray[input];  }
+         else{
+
         int kk = input%10;
         input = input/10;
         //input4 = input/10;
@@ -38,7 +41,7 @@ public class MainController {
             var2 = tensArray[input];
             var3 = var2 +" "+var;
         }
-        else if(input >10) {
+        else if(input >=10) {
             input3 = input;
             input = input % 10;
             input2 = input3 / 10;
@@ -55,8 +58,7 @@ public class MainController {
                 var4 = unitsArray[input2];
                 var3 = var4 + " " + hun + " " + var2 + " " + var;
             }
-
-        }
+        }}
 
         return var3;
     }
