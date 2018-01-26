@@ -18,14 +18,32 @@ public class MainController {
                 "eighteen", "nineteen" };
         String tensArray[] = { "zero", "ten", "twenty", "thirty", "forty", "fifty",
                 "sixty", "seventy", "eighty", "ninety" };
+        String var="";
+        String var2="";
+        String var3="";
+        String var4="";
+        String hun = "hundred";
+        int input2,input3;
 
-             int kk = input%10;
-             input = input/10;
-        String var = unitsArray[kk];
-        String var2 = tensArray[input];
-        String var3 = var2 +" "+var;
+        int kk = input%10;
+        input = input/10;
+        var = unitsArray[kk];
+
+        var3 = var2 +"  "+var;
         if(kk==0){
             var3 = var2;
+        }
+        else if(input<10){
+            var2 = tensArray[input];
+            var3 = var2 +" "+var;
+        }
+        else if(input >10) {
+            input3= input;
+            input = input % 10;
+            input2 = input3/10;
+            var2 = tensArray[input];
+            var4 = unitsArray[input2];
+            var3 = var4 +" "+ hun + " "+var2+" "+var;
         }
         return var3;
     }
